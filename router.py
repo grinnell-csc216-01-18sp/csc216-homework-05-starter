@@ -55,6 +55,11 @@ class Router:
         # TODO: implement me
         pass
 
+    def get_next_hop(self, dst):
+        """ Returns the next hop in the best path from this router to the destination. """
+        # TODO: implement me
+        pass
+
     def __str__(self):
         """ Produces a string representation of a Router, suitable for debugging. """
         # TODO: implement me
