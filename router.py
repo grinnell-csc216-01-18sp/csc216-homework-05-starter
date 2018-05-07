@@ -10,6 +10,9 @@ class Message:
     def __init__(self, src, dst, dv):
         """ Creates a new message that contains a router's updated distance vector.
 
+        Note: exposes two fields, src and dst, that contain the names of the
+        source and destination of the message respectively.
+
         Arguments:
         src (str) - the name of the source router
         dst (str) - the name of the destination router
@@ -25,7 +28,7 @@ class Message:
 
 class Router:
 
-    def __init__(self, name, all_routers, neighbors, network, debug=False):
+    def __init__(self, name, all_routers, neighbors, network, poison, debug=False):
         """ Creates and initializes this router with the given parameters.
 
         Arguments:
@@ -34,6 +37,7 @@ class Router:
         neighbors (map(str, float)) - a mapping from neighbors of this router
             to weights of links connecting this router to its neighbors
         network - the network this router is attached to
+        poison (bool) - whether the router should utilize the poisoned reverse strategy
         debug - whether the program is executing in debug mode (for the
             purposes of debug printing)
         """
@@ -57,6 +61,11 @@ class Router:
 
     def get_next_hop(self, dst):
         """ Returns the next hop in the best path from this router to the destination. """
+        # TODO: implement me
+        pass
+
+    def detect_link_change(self, neighbor, weight):
+        """ Updates this router when it detects that its link with its specified neighbor has changed to the new, updated weight. """
         # TODO: implement me
         pass
 
